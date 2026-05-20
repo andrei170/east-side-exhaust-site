@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>East Side Exhaust &middot; Transmission &amp; Auto Repair in Green Bay, WI &middot; Since 1974</title>
+<meta name="description" content="East Side Exhaust has repaired vehicles at 1726 E Mason St in Green Bay since 1974. ATSG-certified transmission specialists, exhaust, brakes, suspension, diagnostics, and preventative maintenance. 1-year labor warranty on every service. Call (920) 536-4243.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --steel: #5a6c7a;
+    --navy: #1c2e44;
+    --navy-deep: #0f1d2e;
+    --cream: #f4f1ec;
+    --bone: #e6e0d3;
+    --warm: #c79a55;
+    --warm-deep: #a07a3b;
+    --shop: #b1352b;
+    --shop-deep: #8a2820;
+    --ink: #1a1815;
+    --ink-soft: #4a463e;
+    --line: #d4ccbc;
+    --white: #ffffff;
+    --display: 'Bebas Neue', sans-serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--navy);
+    border-bottom: 3px solid var(--shop);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 0; }
+  .brand {
+    font-family: var(--display);
+    font-size: 26px; letter-spacing: 0.04em;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .brand small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 9px; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm);
+    font-weight: 700;
+    margin-top: 3px;
+  }
+  .nav-links { display: flex; gap: 24px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+  .nav-links a { color: var(--cream); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--warm); }
+  .nav-call {
+    background: var(--shop); color: var(--white);
+    padding: 11px 20px; border-radius: 3px;
+    font-size: 14px; font-weight: 800; letter-spacing: 0.03em;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .nav-call:hover { background: var(--shop-deep); }
+  @media (max-width: 880px) { .nav-links { display: none; } }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 72px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--cream);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -10%; right: -8%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(199, 154, 85, 0.18), transparent 60%);
+    filter: blur(70px); pointer-events: none;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -20%; left: -10%;
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(177, 53, 43, 0.24), transparent 65%);
+    filter: blur(60px); pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 760px; }
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--warm); margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(44px, 7vw, 80px); line-height: 0.98;
+    margin-bottom: 22px; letter-spacing: 0.01em;
+    color: var(--cream);
+  }
+  .hero h1 span { color: var(--warm); }
+  .hero-sub { font-size: 18px; color: rgba(244, 241, 236, 0.85); margin-bottom: 34px; max-width: 640px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .btn-call {
+    background: var(--shop); color: var(--white);
+    padding: 18px 34px; border-radius: 4px;
+    font-size: 20px; font-weight: 800; letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-call:hover { background: var(--shop-deep); transform: translateY(-2px); }
+  .btn-ghost {
+    background: transparent; color: var(--cream); border: 2px solid rgba(244,241,236,0.4);
+    padding: 16px 30px; border-radius: 4px;
+    font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--warm); color: var(--warm); }
+  .hero-chips { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+  .chip {
+    background: rgba(244,241,236,0.08); border: 1px solid rgba(244,241,236,0.18);
+    color: var(--cream); padding: 8px 16px; border-radius: 30px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.03em;
+  }
+
+  /* Trust band */
+  .trust {
+    background: var(--shop);
+    color: var(--white);
+    padding: 0;
+  }
+  .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .trust-cell {
+    text-align: center; padding: 30px 18px;
+    border-right: 1px solid rgba(255,255,255,0.16);
+  }
+  .trust-cell:last-child { border-right: none; }
+  .trust-num { font-family: var(--display); font-size: 46px; line-height: 1; color: var(--white); }
+  .trust-lbl { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; margin-top: 6px; color: rgba(255,255,255,0.92); text-transform: uppercase; }
+  @media (max-width: 760px) {
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-cell:nth-child(2) { border-right: none; }
+    .trust-cell:nth-child(1), .trust-cell:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.16); }
+  }
+
+  /* Section base */
+  section { padding: 82px 0; }
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--shop); margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(34px, 4.6vw, 52px); line-height: 1; color: var(--navy);
+    letter-spacing: 0.01em; margin-bottom: 16px;
+  }
+  .section-sub { font-size: 17px; color: var(--ink-soft); max-width: 680px; margin-bottom: 44px; }
+
+  /* Services */
+  .services { background: var(--white); }
+  .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width: 920px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .service-grid { grid-template-columns: 1fr; } }
+  .service-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--shop);
+    border-radius: 4px;
+    padding: 28px 26px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(28,46,68,0.12); }
+  .service-card.flagship { border-top-color: var(--warm); background: var(--navy); color: var(--cream); }
+  .service-tag {
+    display: inline-block; font-family: var(--display); font-size: 13px; letter-spacing: 0.1em;
+    color: var(--shop); margin-bottom: 12px;
+  }
+  .service-card.flagship .service-tag { color: var(--warm); }
+  .service-card h3 { font-size: 21px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .service-card.flagship h3 { color: var(--cream); }
+  .service-meta { font-size: 13px; font-weight: 600; color: var(--warm-deep); margin-bottom: 14px; }
+  .service-card.flagship .service-meta { color: var(--warm); }
+  .service-card p { font-size: 15px; color: var(--ink-soft); margin-bottom: 16px; }
+  .service-card.flagship p { color: rgba(244,241,236,0.82); }
+  .service-card ul { list-style: none; }
+  .service-card li {
+    font-size: 14px; color: var(--ink); padding: 7px 0 7px 24px; position: relative;
+    border-top: 1px solid var(--line);
+  }
+  .service-card.flagship li { color: var(--cream); border-top-color: rgba(244,241,236,0.16); }
+  .service-card li::before {
+    content: '\2713'; position: absolute; left: 0; color: var(--shop); font-weight: 800;
+  }
+  .service-card.flagship li::before { color: var(--warm); }
+
+  /* Warranty band */
+  .warranty {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--cream);
+  }
+  .warranty-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: center; }
+  @media (max-width: 880px) { .warranty-grid { grid-template-columns: 1fr; gap: 36px; } }
+  .warranty-badge {
+    background: var(--shop);
+    border: 4px solid var(--warm);
+    border-radius: 8px;
+    text-align: center;
+    padding: 44px 30px;
+  }
+  .warranty-badge .big { font-family: var(--display); font-size: 96px; line-height: 0.9; color: var(--white); }
+  .warranty-badge .unit { font-family: var(--display); font-size: 30px; color: var(--warm); letter-spacing: 0.08em; }
+  .warranty-badge .sub { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 10px; color: rgba(255,255,255,0.92); }
+  .warranty h2 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 4.4vw, 48px); line-height: 1.02; margin-bottom: 18px; }
+  .warranty h2 span { color: var(--warm); }
+  .warranty p { font-size: 17px; color: rgba(244,241,236,0.85); margin-bottom: 16px; }
+  .warranty-list { list-style: none; margin-top: 22px; }
+  .warranty-list li { font-size: 15px; padding: 9px 0 9px 28px; position: relative; border-top: 1px solid rgba(244,241,236,0.16); }
+  .warranty-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--warm); font-weight: 800; }
+  .warranty-list strong { color: var(--cream); }
+
+  /* About */
+  .about { background: var(--cream); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
+  .about h2 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4.6vw, 52px); line-height: 1; color: var(--navy); margin-bottom: 20px; }
+  .about h2 span { color: var(--shop); }
+  .about p { font-size: 16px; color: var(--ink-soft); margin-bottom: 16px; }
+  .about-quote {
+    border-left: 4px solid var(--shop);
+    padding: 8px 0 8px 22px;
+    font-size: 19px; font-weight: 600; color: var(--navy);
+    margin: 24px 0;
+    line-height: 1.4;
+  }
+  .about-card {
+    background: var(--navy); color: var(--cream);
+    border-radius: 8px; padding: 40px 34px;
+  }
+  .about-card .label { font-family: var(--display); font-size: 15px; letter-spacing: 0.1em; color: var(--warm); margin-bottom: 6px; }
+  .about-stat { padding: 18px 0; border-bottom: 1px solid rgba(244,241,236,0.16); }
+  .about-stat:last-child { border-bottom: none; }
+  .about-stat .num { font-family: var(--display); font-size: 40px; line-height: 1; color: var(--cream); }
+  .about-stat .desc { font-size: 14px; color: rgba(244,241,236,0.8); margin-top: 4px; }
+
+  /* Location + form */
+  .visit { background: var(--white); }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  @media (max-width: 880px) { .visit-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .visit-block h3 { font-family: var(--display); font-weight: 400; font-size: 28px; color: var(--navy); letter-spacing: 0.02em; margin-bottom: 18px; }
+  .info-row { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .info-row:last-child { border-bottom: none; }
+  .info-icon { font-family: var(--display); font-size: 13px; letter-spacing: 0.06em; color: var(--shop); min-width: 88px; padding-top: 2px; }
+  .info-text { font-size: 16px; color: var(--ink); }
+  .info-text strong { color: var(--navy); }
+  .info-text a.callnum { color: var(--shop); font-weight: 800; font-size: 22px; }
+  .phone-cta {
+    display: block; text-align: center;
+    background: var(--shop); color: var(--white);
+    padding: 20px; border-radius: 5px; margin-top: 26px;
+    font-weight: 800; font-size: 22px; letter-spacing: 0.02em;
+    transition: background 0.2s;
+  }
+  .phone-cta:hover { background: var(--shop-deep); }
+  .phone-cta small { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: 4px; }
+
+  /* Form */
+  .quote-form {
+    background: var(--cream); border: 1px solid var(--line);
+    border-radius: 8px; padding: 32px 30px;
+  }
+  .quote-form .field { margin-bottom: 16px; }
+  .quote-form label { display: block; font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; letter-spacing: 0.02em; }
+  .quote-form input, .quote-form textarea, .quote-form select {
+    width: 100%; padding: 12px 14px;
+    border: 1px solid var(--line); border-radius: 4px;
+    font-family: var(--sans); font-size: 15px; color: var(--ink);
+    background: var(--white);
+  }
+  .quote-form textarea { resize: vertical; min-height: 92px; }
+  .quote-form input:focus, .quote-form textarea:focus, .quote-form select:focus { outline: none; border-color: var(--shop); }
+  .quote-form button {
+    width: 100%; background: var(--navy); color: var(--cream);
+    border: none; padding: 16px; border-radius: 4px;
+    font-family: var(--sans); font-size: 15px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .quote-form button:hover { background: var(--navy-deep); }
+  .form-note { font-size: 12px; color: var(--ink-soft); margin-top: 12px; text-align: center; }
+
+  /* FAQ */
+  .faq { background: var(--cream); }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 40px; }
+  @media (max-width: 760px) { .faq-grid { grid-template-columns: 1fr; } }
+  .faq-item { border-top: 2px solid var(--navy); padding-top: 18px; }
+  .faq-item h4 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .faq-item p { font-size: 15px; color: var(--ink-soft); }
+
+  /* Final CTA */
+  .final {
+    background: var(--shop);
+    color: var(--white);
+    text-align: center;
+    padding: 76px 0;
+  }
+  .final h2 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 58px); line-height: 1; margin-bottom: 16px; letter-spacing: 0.01em; }
+  .final p { font-size: 18px; color: rgba(255,255,255,0.92); margin-bottom: 30px; }
+  .final .btn-white {
+    background: var(--white); color: var(--shop);
+    padding: 20px 44px; border-radius: 5px;
+    font-size: 24px; font-weight: 800; letter-spacing: 0.02em;
+    display: inline-block; transition: transform 0.2s;
+  }
+  .final .btn-white:hover { transform: translateY(-2px); }
+  .final .sub-line { font-size: 14px; color: rgba(255,255,255,0.85); margin-top: 18px; letter-spacing: 0.04em; }
+
+  /* Footer */
+  footer { background: var(--navy-deep); color: rgba(244,241,236,0.7); padding: 52px 0 30px; }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
+  @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; gap: 28px; } }
+  .foot-brand { font-family: var(--display); font-size: 28px; color: var(--cream); letter-spacing: 0.04em; margin-bottom: 10px; }
+  .foot-brand small { display: block; font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm); font-weight: 700; margin-top: 4px; }
+  footer p { font-size: 14px; margin-bottom: 6px; }
+  .foot-col h5 { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm); margin-bottom: 14px; }
+  .foot-col a, .foot-col span { display: block; font-size: 14px; color: rgba(244,241,236,0.7); padding: 4px 0; }
+  .foot-col a:hover { color: var(--cream); }
+  .foot-bottom { border-top: 1px solid rgba(244,241,236,0.14); padding-top: 22px; font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .foot-demo { color: rgba(244,241,236,0.45); font-size: 11px; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a href="#top" class="brand">East Side Exhaust<small>Green Bay &middot; Since 1974</small></a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#warranty">Warranty</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="tel:+19205364243" class="nav-call">Call (920) 536-4243</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">1726 E Mason St &middot; Green Bay, Wisconsin</div>
+      <h1>Green Bay's transmission specialists for <span>52 years.</span></h1>
+      <p class="hero-sub">East Side Exhaust has fixed cars and trucks at the same East Mason Street address since 1974. ATSG-certified transmission work, exhaust, brakes, suspension, and full auto repair, with a 1-year labor warranty on every job. Family-owned and operated.</p>
+      <div class="hero-actions">
+        <a href="tel:+19205364243" class="btn-call">&#9742; Call (920) 536-4243</a>
+        <a href="#quote" class="btn-ghost">Request a Quote</a>
+      </div>
+      <div class="hero-chips">
+        <span class="chip">Serving Green Bay since 1974</span>
+        <span class="chip">ATSG-Certified Transmissions</span>
+        <span class="chip">1-Year Labor Warranty</span>
+        <span class="chip">Free Same-Day Estimates</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust band -->
+<div class="trust">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-cell">
+        <div class="trust-num">52</div>
+        <div class="trust-lbl">Years on Mason Street</div>
+      </div>
+      <div class="trust-cell">
+        <div class="trust-num">ATSG</div>
+        <div class="trust-lbl">Certified Transmission</div>
+      </div>
+      <div class="trust-cell">
+        <div class="trust-num">1 yr</div>
+        <div class="trust-lbl">Labor Warranty, Every Job</div>
+      </div>
+      <div class="trust-cell">
+        <div class="trust-num">6</div>
+        <div class="trust-lbl">Service Lines Under One Roof</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="eyebrow">What We Do</div>
+    <h2 class="section-title">Six service lines under one roof.</h2>
+    <p class="section-sub">From a transmission rebuild to an oil change, the work gets done in our bays on East Mason Street, and every job carries the same 1-year labor warranty.</p>
+    <div class="service-grid">
+
+      <div class="service-card flagship">
+        <span class="service-tag">Our Specialty</span>
+        <h3>Transmission Repair &amp; Rebuilds</h3>
+        <div class="service-meta">ATSG-Certified Transmission Work</div>
+        <p>Our flagship line. ATSG-certified diagnostics, fluid and filter service, scheduled service intervals, and full rebuilds on automatics, manuals, and CVTs. We work on late-model units and the older transmissions a 52-year shop has seen plenty of.</p>
+        <ul>
+          <li>ATSG-certified diagnostics</li>
+          <li>In-house transmission rebuild bench</li>
+          <li>Service intervals and fluid work</li>
+          <li>1-year labor warranty</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <span class="service-tag">Since 1974</span>
+        <h3>Exhaust &amp; Mufflers</h3>
+        <div class="service-meta">Our Founding Service Line</div>
+        <p>We opened in 1974 as an exhaust shop, and the exhaust bay has been running ever since. Muffler replacement, custom full-system work, leak repair, and catalytic converter service on most makes and models.</p>
+        <ul>
+          <li>Custom exhaust work</li>
+          <li>Muffler replacement</li>
+          <li>Catalytic converter service</li>
+          <li>Exhaust leak repair</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <span class="service-tag">Brakes</span>
+        <h3>Brake Repair</h3>
+        <div class="service-meta">Pads, Rotors, Lines &amp; Calipers</div>
+        <p>Pad and rotor replacement, brake-line service, caliper rebuild and replacement, fluid flush, and full brake-system diagnostics on cars, trucks, and SUVs. One of the busiest bays on our floor.</p>
+        <ul>
+          <li>Pad and rotor replacement</li>
+          <li>Caliper service</li>
+          <li>Brake-line and fluid service</li>
+          <li>1-year labor warranty</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <span class="service-tag">Suspension</span>
+        <h3>Suspension Repair</h3>
+        <div class="service-meta">Shocks, Struts, Joints &amp; Bars</div>
+        <p>Shock and strut replacement, control-arm and ball-joint service, sway-bar work, and full suspension diagnostics. This is the bay that picks up the work after a Wisconsin winter has had its way with a vehicle.</p>
+        <ul>
+          <li>Shock and strut replacement</li>
+          <li>Control-arm and ball-joint service</li>
+          <li>Suspension diagnostic with every estimate</li>
+          <li>1-year labor warranty</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <span class="service-tag">Diagnostics</span>
+        <h3>Vehicle Diagnostics</h3>
+        <div class="service-meta">Find the Problem First</div>
+        <p>Check-engine code reads, drivability and no-start diagnostics, and electrical-system work. The job that separates a real fix from a guess, with ATSG-trained eyes on every transmission code that comes through.</p>
+        <ul>
+          <li>Check-engine and OBD-II code reads</li>
+          <li>Drivability and no-start diagnostic</li>
+          <li>Electrical-system diagnostic</li>
+          <li>Free same-day estimates on most work</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <span class="service-tag">Maintenance</span>
+        <h3>Preventative Maintenance</h3>
+        <div class="service-meta">Keep It Out of the Repair Bay</div>
+        <p>Scheduled oil and filter service, transmission service intervals, brake-fluid flushes, coolant service, Wisconsin winter prep, and the full inspection that catches a problem before it becomes a repair bill.</p>
+        <ul>
+          <li>Oil and filter service</li>
+          <li>Fluid and coolant services</li>
+          <li>Seasonal and winter prep</li>
+          <li>Full vehicle inspection</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Warranty band -->
+<section class="warranty" id="warranty">
+  <div class="container">
+    <div class="warranty-grid">
+      <div class="warranty-badge">
+        <div class="big">1</div>
+        <div class="unit">Year</div>
+        <div class="sub">Labor Warranty<br>On Every Service</div>
+      </div>
+      <div>
+        <h2>Every job is backed for a <span>full year.</span></h2>
+        <p>A lot of shops give you 90 days on labor. Many national chains cover parts but leave labor out. East Side Exhaust backs every service performed in our bays with a 1-year labor warranty, as our house standard.</p>
+        <p>That means if a job we did needs a second look inside that year, the return visit is on us. It is how we have done business on East Mason Street for 52 years.</p>
+        <ul class="warranty-list">
+          <li><strong>Every line covered</strong> &middot; transmission, exhaust, brake, suspension, diagnostic, and maintenance</li>
+          <li><strong>Free same-day estimates</strong> &middot; before we open any repair order</li>
+          <li><strong>ATSG-certified transmission work</strong> &middot; covered under the same 1-year labor warranty</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="eyebrow">Why East Side Exhaust</div>
+        <h2>A family shop on Mason Street <span>since 1974.</span></h2>
+        <p>East Side Exhaust opened at 1726 E Mason St in Green Bay in 1974 as an exhaust specialist. Over the years we expanded one bay at a time into a full shop: exhaust, transmissions, brakes, suspension, diagnostics, and maintenance. Same address, same family, same standard.</p>
+        <p>That continuity is the reason a customer can bring a truck back a decade after the first repair and find the same bay doing the work the right way. It is also why we hold our ATSG transmission certification, a credential almost no general repair shop in the Green Bay metro carries.</p>
+        <div class="about-quote">"52 years on East Mason Street. The same family-owned shop, the same address, the same standard."</div>
+        <p>We are the kind of independent shop the East Side of Green Bay was built on, the one local families call when something goes wrong with a transmission, an exhaust system, a brake job, or a suspension component.</p>
+      </div>
+      <div class="about-card">
+        <div class="label">The Shop at a Glance</div>
+        <div class="about-stat">
+          <div class="num">1974</div>
+          <div class="desc">Year we opened at 1726 E Mason St, family-owned and operated ever since.</div>
+        </div>
+        <div class="about-stat">
+          <div class="num">ATSG</div>
+          <div class="desc">Automatic Transmission Service Group certified, with ongoing training on new transmission generations.</div>
+        </div>
+        <div class="about-stat">
+          <div class="num">1 Year</div>
+          <div class="desc">Labor warranty on every service, our house standard on every job.</div>
+        </div>
+        <div class="about-stat">
+          <div class="num">Free</div>
+          <div class="desc">Same-day estimates on most jobs, before any repair order is opened.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visit + Quote form -->
+<section class="visit" id="visit">
+  <div class="container">
+    <div class="eyebrow">Visit the Shop</div>
+    <h2 class="section-title">Stop in, or send us the details.</h2>
+    <p class="section-sub">The fastest way to get an answer is to call. Describe the symptom, the vehicle, and the year, and we will tell you whether it is a same-day estimate or a job that needs the vehicle in the bay first.</p>
+    <div class="visit-grid">
+
+      <div class="visit-block">
+        <h3>Where to Find Us</h3>
+        <div class="info-row">
+          <div class="info-icon">Address</div>
+          <div class="info-text"><strong>East Side Exhaust</strong><br>1726 E Mason St<br>Green Bay, WI 54302</div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">Phone</div>
+          <div class="info-text"><a href="tel:+19205364243" class="callnum">(920) 536-4243</a></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">Hours</div>
+          <div class="info-text">Open Monday through Friday during regular business hours. Call ahead to confirm same-day availability and drop-off times.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">Service Area</div>
+          <div class="info-text">Green Bay, Bellevue, Allouez, Ashwaubenon, De Pere, Howard, Suamico, and Brown County.</div>
+        </div>
+        <a href="tel:+19205364243" class="phone-cta"><small>Call the shop</small>(920) 536-4243</a>
+      </div>
+
+      <div class="visit-block" id="quote">
+        <h3>Request a Quote</h3>
+        <form class="quote-form" onsubmit="return false;">
+          <div class="field">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="First and last name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(920) 000-0000" required>
+          </div>
+          <div class="field">
+            <label for="vehicle">Vehicle (Year, Make, Model)</label>
+            <input type="text" id="vehicle" name="vehicle" placeholder="e.g. 2016 Ford F-150">
+          </div>
+          <div class="field">
+            <label for="service">What Do You Need?</label>
+            <select id="service" name="service">
+              <option>Transmission repair or rebuild</option>
+              <option>Exhaust or muffler</option>
+              <option>Brakes</option>
+              <option>Suspension</option>
+              <option>Diagnostics / check engine light</option>
+              <option>Oil change / maintenance</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="details">Describe the Problem</label>
+            <textarea id="details" name="details" placeholder="What is the vehicle doing? When did it start?"></textarea>
+          </div>
+          <button type="submit">Send Request</button>
+          <p class="form-note">Prefer to talk it through? Call <a href="tel:+19205364243" style="color:var(--shop);font-weight:700;">(920) 536-4243</a>. We answer questions before we open any repair order.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="eyebrow">Common Questions</div>
+    <h2 class="section-title">Good to know before you come in.</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>What does the 1-year labor warranty cover?</h4>
+        <p>Every service we perform in our bays is backed by a full year of labor coverage. If a repair we did needs a return visit inside that year, the labor is on us. It applies to every line, from transmission rebuilds to brake jobs.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What does ATSG-certified mean?</h4>
+        <p>ATSG is the Automatic Transmission Service Group, the technical body that trains and certifies transmission specialists. The certification requires ongoing training on new transmission generations as manufacturers release them. Almost no general repair shop in the Green Bay metro carries it. We do.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you give free estimates?</h4>
+        <p>Yes. We offer free same-day estimates on most jobs before any repair order is opened. Call us with the symptom, the vehicle, and the year, and we will tell you whether it is a same-day estimate or a job that needs the vehicle in the bay first.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What kinds of vehicles do you work on?</h4>
+        <p>Cars, trucks, and SUVs across most common makes and models, late-model and older. As a 52-year shop, we have seen a wide range of vehicles and transmission types come through the bays.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do I need an appointment?</h4>
+        <p>For most work, calling ahead is the best way to line up a drop-off time and confirm same-day availability. Call (920) 536-4243 to set it up.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Where are you located?</h4>
+        <p>1726 E Mason St, Green Bay, WI 54302, the same East Mason Street address since 1974. We serve the East Side of Green Bay and the wider Brown County area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final">
+  <div class="container">
+    <h2>Got a noise, a leak, or a warning light?</h2>
+    <p>Call the shop that has fixed Green Bay's cars and trucks for 52 years.</p>
+    <a href="tel:+19205364243" class="btn-white">&#9742; (920) 536-4243</a>
+    <div class="sub-line">1726 E Mason St, Green Bay, WI &middot; Free same-day estimates on most jobs</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">East Side Exhaust<small>Green Bay &middot; Since 1974</small></div>
+        <p>ATSG-certified transmission specialists and full auto repair on East Mason Street, family-owned and operated since 1974.</p>
+        <p style="margin-top:10px;">1726 E Mason St, Green Bay, WI 54302</p>
+        <p><a href="tel:+19205364243" style="color:var(--warm);font-weight:700;">(920) 536-4243</a></p>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="#services">Transmission Repair</a>
+        <a href="#services">Exhaust &amp; Mufflers</a>
+        <a href="#services">Brake Repair</a>
+        <a href="#services">Suspension</a>
+        <a href="#services">Diagnostics</a>
+        <a href="#services">Maintenance</a>
+      </div>
+      <div class="foot-col">
+        <h5>Shop</h5>
+        <a href="#warranty">1-Year Warranty</a>
+        <a href="#about">About Us</a>
+        <a href="#visit">Visit / Hours</a>
+        <a href="#quote">Request a Quote</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 East Side Exhaust &middot; 1726 E Mason St, Green Bay, WI 54302 &middot; (920) 536-4243</span>
+      <span class="foot-demo">Demo site prepared by AG Consulting</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
