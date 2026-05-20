@@ -157,6 +157,20 @@
     color: var(--cream);
     position: relative; overflow: hidden;
   }
+  /* Real storefront photo, set behind the gradient so the navy theme stays legible */
+  .hero-photo {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image: url('https://le-cdn.hibuwebsites.com/c8e3bc7db80c4717beef029fc6b2df1e/dms3rep/multi/opt/east-side-exhaust-inc-video-1920w.jpg');
+    background-size: cover;
+    background-position: center 38%;
+    opacity: 0.30;
+  }
+  .hero-photo::after {
+    content: ''; position: absolute; inset: 0;
+    background:
+      linear-gradient(95deg, rgba(10,20,33,0.92) 0%, rgba(15,29,46,0.74) 46%, rgba(15,29,46,0.40) 100%),
+      linear-gradient(0deg, rgba(10,20,33,0.85) 0%, transparent 42%);
+  }
   /* layered diagonal texture / depth */
   .hero-grid-tex {
     position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5;
@@ -408,6 +422,28 @@
   .about-stat:last-child { border-bottom: none; }
   .about-stat .num { font-family: var(--display); font-size: 46px; line-height: 1; color: var(--cream); letter-spacing: 0.01em; }
   .about-stat .desc { font-size: 14px; color: rgba(244,241,236,0.82); margin-top: 6px; }
+  /* Real shop-bay photo framed inside the about column */
+  .about-photo {
+    position: relative; border-radius: 14px; overflow: hidden;
+    margin: 30px 0 4px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--line);
+  }
+  .about-photo img {
+    width: 100%; height: 320px; object-fit: cover; display: block;
+    filter: saturate(1.02) contrast(1.02);
+  }
+  @media (max-width: 880px) { .about-photo img { height: 240px; } }
+  .about-photo::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(0deg, rgba(10,20,33,0.55) 0%, transparent 38%);
+  }
+  .about-photo .cap {
+    position: absolute; left: 18px; bottom: 14px; z-index: 2;
+    font-family: var(--condensed); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  }
 
   /* Location + form */
   .visit { background: var(--white); }
@@ -560,6 +596,7 @@
 
 <!-- Hero -->
 <section class="hero" id="top">
+  <div class="hero-photo" role="img" aria-label="East Side Exhaust storefront on East Mason Street in Green Bay, Wisconsin"></div>
   <div class="hero-grid-tex"></div>
   <div class="hero-streak"></div>
   <div class="hero-watermark">1974</div>
@@ -741,6 +778,10 @@
         <p>East Side Exhaust opened at 1726 E Mason St in Green Bay in 1974 as an exhaust specialist. Over the years we expanded one bay at a time into a full shop: exhaust, transmissions, brakes, suspension, diagnostics, and maintenance. Same address, same family, same standard.</p>
         <p>That continuity is the reason a customer can bring a truck back a decade after the first repair and find the same bay doing the work the right way. It is also why we hold our ATSG transmission certification, a credential almost no general repair shop in the Green Bay metro carries.</p>
         <div class="about-quote">"52 years on East Mason Street. The same family-owned shop, the same address, the same standard."</div>
+        <div class="about-photo reveal d1">
+          <img src="https://le-cdn.hibuwebsites.com/c8e3bc7db80c4717beef029fc6b2df1e/dms3rep/multi/opt/east-side-exhaust-inc-heo-auto-repair-1920w.jpg" alt="A vehicle up on the lift inside the East Side Exhaust service bay in Green Bay" loading="lazy" width="1920" height="320">
+          <span class="cap">Inside the shop &middot; 1726 E Mason St</span>
+        </div>
         <p>We are the kind of independent shop the East Side of Green Bay was built on, the one local families call when something goes wrong with a transmission, an exhaust system, a brake job, or a suspension component.</p>
       </div>
       <div class="about-card reveal d1">
