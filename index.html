@@ -157,23 +157,32 @@
     color: var(--cream);
     position: relative; overflow: hidden;
   }
-  /* Real storefront photo, set behind the gradient so the navy theme stays legible */
+  /* Real storefront photo, set behind the gradient so the navy theme stays legible.
+     Brighter than before so the building reads clearly, with a tuned scrim for headline contrast. */
   .hero-photo {
-    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    position: absolute; inset: -4% -4% -4% -4%; z-index: 0; pointer-events: none;
     background-image: url('https://le-cdn.hibuwebsites.com/c8e3bc7db80c4717beef029fc6b2df1e/dms3rep/multi/opt/east-side-exhaust-inc-video-1920w.jpg');
     background-size: cover;
     background-position: center 38%;
-    opacity: 0.30;
+    opacity: 0.62;
+    filter: saturate(1.05) contrast(1.04);
+    will-change: transform;
+    animation: heroZoom 26s ease-in-out infinite alternate;
   }
+  @keyframes heroZoom {
+    from { transform: scale(1.0); }
+    to   { transform: scale(1.09); }
+  }
+  /* Scrim: heavier behind the headline (left), lighter on the right so the photo stays visible */
   .hero-photo::after {
     content: ''; position: absolute; inset: 0;
     background:
-      linear-gradient(95deg, rgba(10,20,33,0.92) 0%, rgba(15,29,46,0.74) 46%, rgba(15,29,46,0.40) 100%),
-      linear-gradient(0deg, rgba(10,20,33,0.85) 0%, transparent 42%);
+      linear-gradient(95deg, rgba(10,20,33,0.88) 0%, rgba(12,24,38,0.58) 44%, rgba(15,29,46,0.14) 100%),
+      linear-gradient(0deg, rgba(10,20,33,0.78) 0%, rgba(10,20,33,0.10) 38%, transparent 60%);
   }
   /* layered diagonal texture / depth */
   .hero-grid-tex {
-    position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5;
+    position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.34;
     background-image:
       linear-gradient(rgba(199,154,85,0.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(199,154,85,0.05) 1px, transparent 1px);
@@ -196,9 +205,10 @@
   }
   /* big ghost watermark */
   .hero-watermark {
-    position: absolute; right: -3%; bottom: -8%; z-index: 0; pointer-events: none;
+    position: absolute; right: -3%; bottom: -8%; z-index: 1; pointer-events: none;
     font-family: var(--display); font-size: 30vw; line-height: 0.7;
-    color: rgba(244,241,236,0.025); letter-spacing: -0.02em; white-space: nowrap;
+    color: rgba(244,241,236,0.045); letter-spacing: -0.02em; white-space: nowrap;
+    text-shadow: 0 0 60px rgba(10,20,33,0.4);
   }
   .hero-inner { position: relative; z-index: 2; max-width: 880px; }
   .hero h1 {
@@ -422,27 +432,70 @@
   .about-stat:last-child { border-bottom: none; }
   .about-stat .num { font-family: var(--display); font-size: 46px; line-height: 1; color: var(--cream); letter-spacing: 0.01em; }
   .about-stat .desc { font-size: 14px; color: rgba(244,241,236,0.82); margin-top: 6px; }
-  /* Real shop-bay photo framed inside the about column */
-  .about-photo {
-    position: relative; border-radius: 14px; overflow: hidden;
-    margin: 30px 0 4px;
-    box-shadow: var(--shadow-card);
-    border: 1px solid var(--line);
+  /* Real shop-bay photo, promoted to a full-bleed cinematic band */
+  .bay-band {
+    position: relative;
+    width: 100vw;
+    left: 50%; right: 50%;
+    margin-left: -50vw; margin-right: -50vw;
+    height: 66vh; min-height: 440px; max-height: 760px;
+    overflow: hidden;
+    background: var(--navy-darker);
+    padding: 0;
   }
-  .about-photo img {
-    width: 100%; height: 320px; object-fit: cover; display: block;
-    filter: saturate(1.02) contrast(1.02);
+  .bay-band__img {
+    position: absolute; inset: -5% -5% -5% -5%;
+    background-image: url('https://le-cdn.hibuwebsites.com/c8e3bc7db80c4717beef029fc6b2df1e/dms3rep/multi/opt/east-side-exhaust-inc-heo-auto-repair-1920w.jpg');
+    background-size: cover;
+    background-position: center 46%;
+    filter: saturate(1.05) contrast(1.05);
+    will-change: transform;
+    animation: bayZoom 30s ease-in-out infinite alternate;
   }
-  @media (max-width: 880px) { .about-photo img { height: 240px; } }
-  .about-photo::after {
-    content: ''; position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(0deg, rgba(10,20,33,0.55) 0%, transparent 38%);
+  @keyframes bayZoom {
+    from { transform: scale(1.0); }
+    to   { transform: scale(1.08); }
   }
-  .about-photo .cap {
-    position: absolute; left: 18px; bottom: 14px; z-index: 2;
-    font-family: var(--condensed); font-size: 12px; font-weight: 600;
-    letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream);
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  .bay-band__scrim {
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      linear-gradient(90deg, rgba(10,20,33,0.78) 0%, rgba(12,24,38,0.42) 42%, rgba(15,29,46,0.16) 100%),
+      linear-gradient(0deg, rgba(10,20,33,0.86) 0%, rgba(10,20,33,0.12) 40%, transparent 64%),
+      linear-gradient(180deg, rgba(10,20,33,0.50) 0%, transparent 24%);
+  }
+  /* keep a thin shop-red top edge to tie into the brand */
+  .bay-band::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; z-index: 3;
+    background: linear-gradient(90deg, var(--shop) 0%, var(--shop-bright) 50%, var(--shop) 100%);
+  }
+  .bay-band__inner {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    max-width: 1200px; margin: 0 auto; padding: 0 28px 52px;
+  }
+  .bay-band__eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--condensed); font-size: 13px; font-weight: 600;
+    letter-spacing: 0.34em; text-transform: uppercase; color: var(--warm);
+    margin-bottom: 16px;
+  }
+  .bay-band__eyebrow::before { content: ''; width: 34px; height: 2px; background: var(--warm); display: inline-block; }
+  .bay-band__cap {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(30px, 4.6vw, 58px); line-height: 0.98;
+    color: var(--cream); text-transform: uppercase; letter-spacing: 0.01em;
+    max-width: 760px; text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  }
+  .bay-band__cap span { color: var(--warm); }
+  .bay-band__sub {
+    font-family: var(--condensed); font-size: 14px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(244,241,236,0.86); margin-top: 14px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+  @media (max-width: 880px) {
+    .bay-band { height: 60vh; min-height: 360px; }
+    .bay-band__inner { padding: 0 24px 38px; }
   }
 
   /* Location + form */
@@ -778,10 +831,6 @@
         <p>East Side Exhaust opened at 1726 E Mason St in Green Bay in 1974 as an exhaust specialist. Over the years we expanded one bay at a time into a full shop: exhaust, transmissions, brakes, suspension, diagnostics, and maintenance. Same address, same family, same standard.</p>
         <p>That continuity is the reason a customer can bring a truck back a decade after the first repair and find the same bay doing the work the right way. It is also why we hold our ATSG transmission certification, a credential almost no general repair shop in the Green Bay metro carries.</p>
         <div class="about-quote">"52 years on East Mason Street. The same family-owned shop, the same address, the same standard."</div>
-        <div class="about-photo reveal d1">
-          <img src="https://le-cdn.hibuwebsites.com/c8e3bc7db80c4717beef029fc6b2df1e/dms3rep/multi/opt/east-side-exhaust-inc-heo-auto-repair-1920w.jpg" alt="A vehicle up on the lift inside the East Side Exhaust service bay in Green Bay" loading="lazy" width="1920" height="320">
-          <span class="cap">Inside the shop &middot; 1726 E Mason St</span>
-        </div>
         <p>We are the kind of independent shop the East Side of Green Bay was built on, the one local families call when something goes wrong with a transmission, an exhaust system, a brake job, or a suspension component.</p>
       </div>
       <div class="about-card reveal d1">
@@ -806,6 +855,19 @@
     </div>
   </div>
 </section>
+
+<!-- Full-bleed service-bay band (real shop photo) -->
+<div class="bay-band" role="img" aria-label="A vehicle up on the lift inside the East Side Exhaust service bay at 1726 E Mason St in Green Bay">
+  <div class="bay-band__img"></div>
+  <div class="bay-band__scrim"></div>
+  <div class="bay-band__inner">
+    <div class="reveal">
+      <div class="bay-band__eyebrow">Inside the Shop</div>
+      <div class="bay-band__cap">The work gets done in <span>our bays.</span></div>
+      <div class="bay-band__sub">1726 E Mason St &middot; Green Bay, Wisconsin &middot; Since 1974</div>
+    </div>
+  </div>
+</div>
 
 <!-- Visit + Quote form -->
 <section class="visit" id="visit">
